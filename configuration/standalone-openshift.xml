@@ -166,6 +166,7 @@
                     </driver>
                     <driver name="mysql" module="com.mysql">
                         <driver-class>com.mysql.cj.jdbc.Driver</driver-class>
+                        <xa-datasource-class>com.mysql.cj.jdbc.MysqlDataSource</xa-datasource-class>
                     </driver>
                 </drivers>
             </datasources>
