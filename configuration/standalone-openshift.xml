@@ -150,7 +150,7 @@
                         <password>sa</password>
                     </security>
                 </datasource>
-                <xa-datasource jndi-name="java:jboss/datasources/kitchensink1"
+                <datasource jndi-name="java:jboss/datasources/kitchensink1"
                     pool-name="kitchensink-quickstart" enabled="true"
                     use-java-context="true">
                     <connection-url>jdbc:mysql://${env.MYSQL_DB_URL}/kitchensink?allowPublicKeyRetrieval=true&amp;useSSL=false&amp;serverTimezone=UTC</connection-url>
@@ -159,7 +159,7 @@
                         <user-name>${env.MYSQL_USERNAME}</user-name>
                         <password>${env.MYSQL_PASSWORD}</password>
                     </security>
-                </xa-datasource>
+                </datasource>
                 <drivers>
                     <driver name="h2" module="com.h2database.h2">
                         <xa-datasource-class>org.h2.jdbcx.JdbcDataSource</xa-datasource-class>
