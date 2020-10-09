@@ -154,7 +154,7 @@
                     pool-name="kitchensink-quickstart" enabled="true"
                     use-java-context="true">
                     <connection-url>jdbc:mysql://${env.MYSQL_DB_URL}/kitchensink?allowPublicKeyRetrieval=true&amp;useSSL=false&amp;serverTimezone=UTC</connection-url>
-                    <driver>mysql</driver>
+                    <driver>mysql-new</driver>
                     <security>
                         <user-name>${env.MYSQL_USERNAME}</user-name>
                         <password>${env.MYSQL_PASSWORD}</password>
@@ -164,7 +164,7 @@
                     <driver name="h2" module="com.h2database.h2">
                         <xa-datasource-class>org.h2.jdbcx.JdbcDataSource</xa-datasource-class>
                     </driver>
-                    <driver name="mysql" module="com.mysql">
+                    <driver name="mysql-new" module="com.mysql">
                         <driver-class>com.mysql.cj.jdbc.Driver</driver-class>
                         <xa-datasource-class>com.mysql.jdbc.jdbc2.optional.MysqlXADataSource</xa-datasource-class>
                     </driver>
