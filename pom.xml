@@ -15,8 +15,7 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.jboss.eap.quickstarts</groupId>
@@ -112,8 +111,8 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.21</version>
-          </dependency>
-          
+        </dependency>
+
         <!-- Optional, but highly recommended -->
         <!-- Arquillian allows you to test enterprise code such as EJBs and Transactional(JTA)
             JPA from JUnit/TestNG -->
@@ -172,51 +171,6 @@
     <build>
         <!-- Set the name of the WAR, used as the context root when the app is deployed -->
         <finalName>${project.artifactId}</finalName>
-        <plugins>
-            <plugin>
-                <groupId>org.wildfly.plugins</groupId>
-                <artifactId>wildfly-maven-plugin</artifactId>
-                <configuration>
-                    <serverConfig>standalone.xml</serverConfig>
-                    <server-args>
-                        <server-arg>-DDB_USERNAME=root</server-arg>
-                    </server-args>
-                    <beforeDeployment>
-                        <commands>
-                            <command>/subsystem=ee:write-attribute(name="jboss-descriptor-property-replacement",value=true)</command>
-                            <command>/subsystem=ee:write-attribute(name="spec-descriptor-property-replacement",value=true)</command>
-                        </commands>
-                    </beforeDeployment>
-                    <add-user>
-                        <users>
-                            <user>
-                                <username>admin</username>
-                                <password>admin.1234</password>
-                                <groups>
-                                    <group>admin</group>
-                                    <group>user</group>
-                                </groups>
-                            </user>
-                            <user>
-                                <username>user</username>
-                                <password>1234</password>
-                                <groups>
-                                    <group>user</group>
-                                </groups>
-                                <application-user>true</application-user>
-                            </user>
-                        </users>
-                    </add-user>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>run</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
     </build>
-    
+
 </project>
