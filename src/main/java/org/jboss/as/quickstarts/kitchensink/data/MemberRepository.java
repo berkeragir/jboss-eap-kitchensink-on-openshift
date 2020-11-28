@@ -17,7 +17,6 @@
 package org.jboss.as.quickstarts.kitchensink.data;
 
 import javax.enterprise.context.ApplicationScoped;
-import javax.faces.annotation.FacesConfig;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.criteria.CriteriaBuilder;
@@ -27,7 +26,6 @@ import java.util.List;
 
 import org.jboss.as.quickstarts.kitchensink.model.Member;
 
-@FacesConfig
 @ApplicationScoped
 public class MemberRepository {
 
